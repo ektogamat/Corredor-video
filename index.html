@@ -74,6 +74,9 @@
     var frameNumber  = window.pageYOffset/playbackConst;
     vid.currentTime  = frameNumber;
     window.requestAnimationFrame(scrollPlay);
+    if (vid.readyState != 1) {
+        vid.currentTime = seconds;
+     }
     }
 
     window.requestAnimationFrame(scrollPlay);
